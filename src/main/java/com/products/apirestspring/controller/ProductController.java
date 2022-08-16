@@ -1,6 +1,6 @@
 package com.products.apirestspring.controller;
 
-import com.products.apirestspring.models.Product;
+import com.products.apirestspring.model.Product;
 import com.products.apirestspring.repository.ProductRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,13 +26,13 @@ public class ProductController {
 
     @GetMapping("/product/{id}")
     @ApiOperation(value = "Returns a product by it's id")
-    public Product uniqueProduct(@PathVariable(value = "id")long id) {
+    public Product uniqueProductById(@PathVariable(value = "id")long id) {
         return productRepository.findById(id);
     }
 
     @PostMapping("/product")
-    @ApiOperation(value = "Add a new product to the list")
-    public Product saveProduct(@RequestBody Product product) {
+    @ApiOperation(value = "Create a new product to the list")
+    public Product createProduct(@RequestBody Product product) {
         return productRepository.save(product);
     }
 

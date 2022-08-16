@@ -1,9 +1,11 @@
-package com.products.apirestspring.models;
+package com.products.apirestspring.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
+
 
 @Entity
 @Table(name = "TB_PRODUCT", schema = "public")
@@ -17,11 +19,25 @@ public class Product implements Serializable {
     @Column(name = "id", nullable = false)
     private long id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private BigDecimal quantity;
 
+    @NotNull
     private BigDecimal value;
+
+
+    public Product() {
+    }
+
+    public Product(long id, String name, BigDecimal quantity, BigDecimal value) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.value = value;
+    }
 
     public long getId() {
         return id;
