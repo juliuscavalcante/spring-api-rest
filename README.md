@@ -15,7 +15,7 @@
 
 <h2 id="objetivos">Objetivos</h2>
 
-<p>Estudar e praticar a criação de uma API REST com utilização do Spring</p>
+<p>Estudar e praticar a criação de uma API REST e testes unitários com utilização do Spring</p>
 
 <h2 id="sobre-o-projeto">Sobre o Projeto</h2>
 
