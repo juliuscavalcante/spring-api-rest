@@ -41,6 +41,20 @@
 
 <h2 id="screenshots">Screenshots</h2>
 
+<h3>Métodos HTTP</h3>
+
+![swagger-req](https://user-images.githubusercontent.com/89096854/185151653-f081a13f-7128-49d9-9f4a-0bf90f3eb558.PNG)
+
+<h3>Banco de Dados</h3>
+
+![banco_de_dados](https://user-images.githubusercontent.com/89096854/185151637-8ebfd3b8-e2fc-4618-8e08-8009d8c293fe.PNG)
+
+<h3>Testes</h3>
+
+![unit_testing](https://user-images.githubusercontent.com/89096854/185151656-397f2ee9-0cc5-42a2-8fa1-286081c88bc6.PNG)
+
+![build_sucess_unit_testing](https://user-images.githubusercontent.com/89096854/185151646-7297145e-5a92-4b1a-8b59-b62fb13bf22d.PNG)
+
 <h2 id="como-rodar-o-projeto">Como Rodar o Projeto</h2>
 
 <h3>Instalação</h3>
