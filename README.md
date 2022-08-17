@@ -19,7 +19,7 @@
 
 <h2 id="sobre-o-projeto">Sobre o Projeto</h2>
 
-<p>O projeto trata da criação de uma API REST para gerenciamento de Produtos, uma estrutura de CRUD (CREATE/READ/UPDATE/DELETE) com os principais métodos HTTP (GET/PUT/UPDATE/DELETE). O sistema foi desenvolvido em Java e Spring com as configurações realizadas com Spring Boot, a entidade foi mapeada utilizando JPA e Hibernate e os dados foram persistidos no Banco de Dados Postgres. A API foi documentada através do Swagger.
+<p>O projeto trata da criação de uma API REST para gerenciamento de Produtos, uma estrutura de CRUD (CREATE/READ/UPDATE/DELETE) com os principais métodos HTTP (GET/PUT/UPDATE/DELETE). O sistema foi desenvolvido em Java e Spring com as configurações realizadas com Spring Boot, a entidade foi mapeada utilizando JPA e Hibernate e os dados foram persistidos no Banco de Dados Postgres. Para gerenciamento de depedências foi utilizado o Maven, e a API foi toda documentada através do Swagger.
 
 <h2 id="tecnologias-utilizadas">Tecnologias Utilizadas:</h2>
 
