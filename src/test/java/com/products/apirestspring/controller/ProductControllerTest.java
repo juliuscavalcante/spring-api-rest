@@ -14,12 +14,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(ProductController.class)
@@ -34,9 +34,9 @@ public class ProductControllerTest {
     @MockBean
     private ProductRepository productRepository;
 
-    Product PRODUCT_1 = new Product(1, "Headset",  new BigDecimal(5), new BigDecimal(49.90));
-    Product PRODUCT_2 = new Product(2, "Mouse",  new BigDecimal(5), new BigDecimal(69.90));
-    Product PRODUCT_3 = new Product(3, "Keyboard",  new BigDecimal(5), new BigDecimal(99.90));
+    Product PRODUCT_1 = new Product(1, "Headset", new BigDecimal(5), new BigDecimal(49.90));
+    Product PRODUCT_2 = new Product(2, "Mouse", new BigDecimal(5), new BigDecimal(69.90));
+    Product PRODUCT_3 = new Product(3, "Keyboard", new BigDecimal(5), new BigDecimal(99.90));
 
     @Test
     public void getAllProducts_sucess() throws Exception {
@@ -45,8 +45,8 @@ public class ProductControllerTest {
         Mockito.when(productRepository.findAll()).thenReturn(products);
 
         mockMvc.perform(MockMvcRequestBuilders
-                .get("/api/products")
-                .contentType(MediaType.APPLICATION_JSON))
+                        .get("/api/products")
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(3)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].name", Matchers.is("Keyboard")));
@@ -57,8 +57,8 @@ public class ProductControllerTest {
         Mockito.when(productRepository.findById(PRODUCT_1.getId())).thenReturn(PRODUCT_1);
 
         mockMvc.perform(MockMvcRequestBuilders
-                .get("/api/product/1")
-                .contentType(MediaType.APPLICATION_JSON))
+                        .get("/api/product/1")
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.notNullValue()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.name", Matchers.is("Headset")));
@@ -66,7 +66,7 @@ public class ProductControllerTest {
 
     @Test
     public void createProduct_sucess() throws Exception {
-        Product product = new Product(9, "AirDot", new BigDecimal(5), new BigDecimal(129.90));
+        Product product = new Product(1, "AirDots", new BigDecimal(5), new BigDecimal(149.90));
 
         Mockito.when(productRepository.save(product)).thenReturn(product);
 
@@ -78,7 +78,37 @@ public class ProductControllerTest {
         mockMvc.perform(mockHttpServletRequestBuilder)
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.notNullValue()))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name", Matchers.is("AirDot")));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.name", Matchers.is("AirDots")));
         }
+
+    @Test
+    public void updateProduct_sucess() throws Exception {
+        Product updateProduct = new Product(1, "AirDots", new BigDecimal(5), new BigDecimal(149.90));
+
+        Mockito.when(productRepository.save(updateProduct)).thenReturn(updateProduct);
+
+        MockHttpServletRequestBuilder mockHttpServletRequestBuilder = MockMvcRequestBuilders.post("/api/product")
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON)
+                .content(this.mapper.writeValueAsString(updateProduct));
+
+        mockMvc.perform(mockHttpServletRequestBuilder)
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$",Matchers.notNullValue()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.name", Matchers.is("AirDots")));
+        }
+
+    @Test
+    public void deleteProduct_sucess() throws Exception {
+        Product product = new Product(1, "AirDots", new BigDecimal(5), new BigDecimal(149.90));
+
+        Mockito.when(productRepository.save(product)).thenReturn(product);
+        Mockito.when(productRepository.findById(product.getId())).thenReturn(product);
+
+        mockMvc.perform(MockMvcRequestBuilders
+                .delete("/api/product/1")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
     }
+}
 

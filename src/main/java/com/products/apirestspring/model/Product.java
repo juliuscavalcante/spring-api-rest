@@ -5,6 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 
 @Entity
@@ -69,5 +70,30 @@ public class Product implements Serializable {
 
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", quantity=" + quantity +
+                ", value=" + value +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id && Objects.equals(name, product.name) && Objects.equals(quantity, product.quantity) && Objects.equals(value, product.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, quantity, value);
     }
 }

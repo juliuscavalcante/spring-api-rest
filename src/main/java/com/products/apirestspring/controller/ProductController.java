@@ -5,8 +5,10 @@ import com.products.apirestspring.repository.ProductRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -26,7 +28,7 @@ public class ProductController {
 
     @GetMapping("/product/{id}")
     @ApiOperation(value = "Returns a product by it's id")
-    public Product uniqueProductById(@PathVariable(value = "id")long id) {
+    public Product uniqueProductById(@PathVariable(value = "id") long id) {
         return productRepository.findById(id);
     }
 
@@ -36,10 +38,10 @@ public class ProductController {
         return productRepository.save(product);
     }
 
-    @DeleteMapping("/product")
+    @DeleteMapping("/product/{id}")
     @ApiOperation(value = "Delete a product from the list")
-    public void deleteProduct(@RequestBody Product product) {
-        productRepository.delete(product);
+    public void deleteProductById(@PathVariable(value = "id")long id) {
+        productRepository.deleteById(id);
     }
 
     @PutMapping("/product")
