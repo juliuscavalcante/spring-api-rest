@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-
 @Entity
 @Table(name = "TB_PRODUCT", schema = "public")
 public class Product implements Serializable {
@@ -28,7 +27,6 @@ public class Product implements Serializable {
 
     @NotNull
     private BigDecimal value;
-
 
     public Product() {
     }
@@ -71,8 +69,6 @@ public class Product implements Serializable {
     public void setValue(BigDecimal value) {
         this.value = value;
     }
-
-
 
     @Override
     public String toString() {
