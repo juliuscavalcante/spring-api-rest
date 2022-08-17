@@ -31,6 +31,6 @@
 
 <h2 id="screenshots">Screenshots</h2>
 
-<h2 id="como-rodar-o-projeto"</h2>
+<h2 id="como-rodar-o-projeto">Como Rodar o Projeto</h2>
 
 <h2 id="pontos-de-melhoria">Pontos de Melhoria</h2>
