@@ -19,8 +19,10 @@
 
 <h2 id="sobre-o-projeto">Sobre o Projeto</h2>
 
-<p>O projeto trata da criação de uma API REST para gerenciamento de Produtos, uma estrutura de CRUD (CREATE/READ/UPDATE/DELETE) com os principais métodos HTTP (GET/PUT/UPDATE/DELETE). O sistema foi desenvolvido em Java e Spring com as configurações realizadas com Spring Boot, a entidade foi mapeada utilizando JPA e Hibernate e os dados foram persistidos no Banco de Dados Postgres. Para gerenciamento de depedências foi utilizado o Maven, e a API foi toda documentada através do Swagger.
-Os Testes unitários no Controller foram realizados JUnit, Mockito e Spring MockMVC.</p>
+<p>O projeto trata da criação de uma API REST para gerenciamento de Produtos, uma estrutura de CRUD (CREATE/READ/UPDATE/DELETE) com os principais métodos HTTP (GET/PUT/UPDATE/DELETE).</p>
+</p>O sistema foi desenvolvido em Java e Spring com as configurações realizadas com Spring Boot, a entidade foi mapeada utilizando JPA e Hibernate e os dados foram persistidos no Banco de Dados Postgres.</p> 
+<p>Para gerenciamento de depedências foi utilizado o Maven, e a API foi toda documentada através do Swagger.</p>
+<p>Os Testes unitários no Controller foram realizados JUnit, Mockito e Spring MockMVC.</p>
 
 <h2 id="tecnologias-utilizadas">Tecnologias Utilizadas:</h2>
 
@@ -55,7 +57,6 @@ spring.datasource.username = seu-usuario
 spring.datasource.password = sua-senha
 ```
  
-
 <h3>Execução</h3>
 
 <p>Execute o projeto através do IDE, abra um navegador de sua preferência e digite: http://localhost:8080/swagger-ui/#/ para acessar a interface do Swagger para acessar os métodos de requisição</p>
