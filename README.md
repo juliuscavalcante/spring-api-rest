@@ -20,6 +20,15 @@
 <h2 id="sobre-o-projeto">Sobre o Projeto</h2>
 
 <p>O projeto trata da criação de uma API REST para gerenciamento de Produtos, uma estrutura de CRUD (CREATE/READ/UPDATE/DELETE) com os principais métodos HTTP (GET/PUT/UPDATE/DELETE). O sistema foi desenvolvido em Java e Spring com as configurações realizadas com Spring Boot, a entidade foi mapeada utilizando JPA e Hibernate e os dados foram persistidos no Banco de Dados Postgres. Para gerenciamento de depedências foi utilizado o Maven, e a API foi toda documentada através do Swagger.
+Os Testes unitários no Controller foram realizados JUnit, Mockito e Spring MockMVC.</p>
+
+
+
+A aplicação foi testada... 
+MockMVC
+Mockito
+Junit
+</p>
 
 <h2 id="tecnologias-utilizadas">Tecnologias Utilizadas:</h2>
 
@@ -31,6 +40,7 @@
    <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
    <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white"/>
    <img src="https://img.shields.io/badge/apache_maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white"/>
+   <img src="https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white"/>
 </p>
 
 <h2 id="demonstracao">Demonstração</h2>
