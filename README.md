@@ -65,4 +65,4 @@ spring.datasource.password = sua-senha
 <h2 id="pontos-de-melhoria">Pontos de Melhoria</h2>
 <ul>
  <li>Deploy do projeto em Cloud</li>
- <li>Criação de novos métodos de requisição HTTPs</li>
+ <li>Criação de novos métodos de requisição HTTP</li>
