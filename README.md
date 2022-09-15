@@ -61,7 +61,7 @@ https://user-images.githubusercontent.com/89096854/185163418-424bc8f6-3c20-43ed-
 
 <h3>Instalação</h3>
 
-<p>O projeto é gerenciado pelo Maven, então para usa-lo basta importa-lo para uma IDE.</p>
+<p>O projeto é gerenciado pelo Maven, então para usa-lo basta importa-lo para uma IDE. </p>
 
 <h3>Configurações do banco de dados</h3>
 
